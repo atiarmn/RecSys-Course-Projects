@@ -1,0 +1,40 @@
+# environment version 5, updated Feb. 8, 2024
+# revision log:
+#   V5: adjusted pytorch version
+#   V4: added dvc (to automate the runs, not needed for example code)
+#   V3: added humanize, jupytext; restricted numpy
+#   V2: added lenskit-implicit
+
+# note: pytorch is a relatively large download, at least on windows
+# note: this file installs the CPU version of pytorch, see  comment below
+name: dsci641
+channels:
+- pytorch
+- conda-forge
+- nodefaults
+dependencies:
+- python=3.11
+- pip
+- pandas>=1.4
+- numpy<1.24
+- pyarrow
+- scipy>=1.10
+- sympy>=1.11
+- tbb
+- lenskit=0.14
+- lenskit-implicit
+- implicit
+- scikit-learn>=1
+- tqdm
+- humanize
+- matplotlib
+- dvc=3
+- seaborn
+- notebook
+- jupytext
+- ipywidgets
+- docopt
+- dvc=3
+- ruff
+- pytorch=2.2
+- pytorch-mutex=*=cpu

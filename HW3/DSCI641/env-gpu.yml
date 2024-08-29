@@ -1,0 +1,44 @@
+# environment version 6, updated Feb. 14, 2024
+# revision log:
+#   V6: add nvidia channel, fix for windows
+#   V5: update pytorch version
+#   V4: added dvc (to automate the runs, not needed for example code)
+#   V3: added humanize, jupytext; restricted numpy
+#   V2: added lenskit-implicit
+
+# note: pytorch is a relatively large download, at least on windows
+# note: this file installs the CPU version of pytorch, see  comment below
+name: dsci641
+channels:
+- pytorch
+- nvidia
+- conda-forge
+- nodefaults
+dependencies:
+- python=3.11
+- pip
+- pandas>=1.4
+- numpy<1.24
+- pyarrow
+- scipy>=1.10
+- sympy>=1.11
+- tbb
+- lenskit=0.14
+- lenskit-implicit
+- implicit
+- scikit-learn>=1
+- tqdm
+- humanize
+- matplotlib
+- dvc=3
+- seaborn
+- notebook
+- jupytext
+- ipywidgets
+- docopt
+- dvc=3
+- ruff
+- pytorch>=2,<3
+- pytorch-mutex=*=cuda
+# since pytorch gpu is only working on intel, use mkl as well
+- libblas=*=*mkl*

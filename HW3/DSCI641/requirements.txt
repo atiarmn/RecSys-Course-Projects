@@ -1,0 +1,12 @@
+lenskit~=0.14
+numpy>=1.22,<1.24
+scipy>=1.10
+pandas>=1.4
+matplotlib
+seaborn
+pyarrow
+scikit-learn==1.*
+tqdm
+humanize
+docopt
+torch>=2.2,<3

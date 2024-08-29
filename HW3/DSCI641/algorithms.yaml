@@ -1,0 +1,41 @@
+-   name: 'BIAS'
+    predictor: true
+
+-   name: 'E-MF'
+    predictor: true
+
+-   name: 'TorchEMF'
+    predictor: true
+    module: 'torchmf'
+
+-   name: 'POP'
+    predictor: false
+    tunable: false
+
+-   name: 'LIFT'
+    predictor: false
+    tunable: false
+
+-   name: 'I-MF'
+    predictor: false
+
+-   name: 'UserIMF'
+    predictor: false
+    module: 'torchimf'
+
+# -   name: 'UserLMF'
+#     predictor: false
+#     module: 'torchlmf'
+
+-   name: 'SampLMF'
+    predictor: false
+    module: 'torchimfsamp'
+
+-   name: 'BPR'
+    predictor: false
+    module: 'torchimfsamp'
+
+-   name: 'TagEMF'
+    predictor: true
+    tags: true
+    module: 'torchtag'

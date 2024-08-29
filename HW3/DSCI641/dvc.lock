@@ -1,0 +1,1443 @@
+schema: '2.0'
+stages:
+  default-temporal-pop:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval POP
+    deps:
+    - path: data/ml-25m-split
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: recs/ml-25m-default-POP
+      hash: md5
+      md5: d5833e8be592a1ee9675f9d01c4bf5eb.dir
+      size: 149066
+      nfiles: 1
+  default-temporal-bias:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval BIAS
+    deps:
+    - path: data/ml-25m-split
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: preds/ml-25m-default-BIAS
+      hash: md5
+      md5: bb05bb7ce91a3ddc0e26990df98ae183.dir
+      size: 2030427
+      nfiles: 1
+    - path: recs/ml-25m-default-BIAS
+      hash: md5
+      md5: 85591b4b31f167cc58bed7fcea34e144.dir
+      size: 66329
+      nfiles: 1
+  default-temporal-torchemf:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval TorchEMF
+    deps:
+    - path: data/ml-25m-split
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: preds/ml-25m-default-TorchEMF
+      hash: md5
+      md5: 38bc9c54a4e792c5ef1bd1fb1bd76481.dir
+      size: 1684700
+      nfiles: 1
+    - path: recs/ml-25m-default-TorchEMF
+      hash: md5
+      md5: c1543da9c6d69e201cdcb8538aadcf47.dir
+      size: 544856
+      nfiles: 1
+  default-temporal-emf:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval E-MF
+    deps:
+    - path: data/ml-25m-split
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: preds/ml-25m-default-E-MF
+      hash: md5
+      md5: d755f0e6652a7fcac205e4779b09b9ca.dir
+      size: 2033603
+      nfiles: 1
+    - path: recs/ml-25m-default-E-MF
+      hash: md5
+      md5: 5164717bf1eadb387e6731154d3351db.dir
+      size: 763924
+      nfiles: 1
+  default-temporal-imf:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval I-MF
+    deps:
+    - path: data/ml-25m-split
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: recs/ml-25m-default-I-MF
+      hash: md5
+      md5: a2473474380558963fd723fd5943121e.dir
+      size: 818723
+      nfiles: 1
+  default-temporal-lift:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval LIFT
+    deps:
+    - path: data/ml-25m-split
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: recs/ml-25m-default-LIFT
+      hash: md5
+      md5: 3c5b00a6877c4bc3d9ad10bc7e32701c.dir
+      size: 340891
+      nfiles: 1
+  default-temporal-user-imf:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval UserIMF
+    deps:
+    - path: data/ml-25m-split
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: recs/ml-25m-default-UserIMF
+      hash: md5
+      md5: ae9f485b75a522f452f793d9117a86e6.dir
+      size: 505388
+      nfiles: 1
+  default-temporal-user-lmf:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval UserLMF
+    deps:
+    - path: data/ml-25m-split
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: recs/ml-25m-default-UserLMF
+      hash: md5
+      md5: fba895586c7403e46e2c2bc9b83d7ca3.dir
+      size: 515841
+      nfiles: 1
+  default-temporal-samp-lmf:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval SampLMF
+    deps:
+    - path: data/ml-25m-split
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: recs/ml-25m-default-SampLMF
+      hash: md5
+      md5: 406778de4be9fcb00ab6365a450fc0b1.dir
+      size: 527082
+      nfiles: 1
+  default-temporal-bpr:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval BPR
+    deps:
+    - path: data/ml-25m-split
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: recs/ml-25m-default-BPR
+      hash: md5
+      md5: 02e7d72200d39bb315b02100dba6c1dd.dir
+      size: 516617
+      nfiles: 1
+  default-temporal-TagEMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval --tags TagEMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchtag.py
+      hash: md5
+      md5: d81fb9680bb864acc8384c65111ad37a
+      size: 14545
+    outs:
+    - path: preds/ml-25m-default-TagEMF
+      hash: md5
+      md5: abeccab369d9aa32e22fea9b08a8da7c.dir
+      size: 1684756
+      nfiles: 1
+    - path: recs/ml-25m-default-TagEMF
+      hash: md5
+      md5: 76eab8d6c3aa34f538e7afc95c1ef112.dir
+      size: 554060
+      nfiles: 1
+  default-temporal-E-MF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval E-MF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: preds/ml-25m-default-E-MF
+      hash: md5
+      md5: 369527010ffe25c18af9b38b2ccb8ca8.dir
+      size: 2033619
+      nfiles: 1
+    - path: recs/ml-25m-default-E-MF
+      hash: md5
+      md5: dbf47e03ce48277c6e5b5ab2b986f319.dir
+      size: 764502
+      nfiles: 1
+  default-temporal-POP:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval POP
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: recs/ml-25m-default-POP
+      hash: md5
+      md5: d5833e8be592a1ee9675f9d01c4bf5eb.dir
+      size: 149066
+      nfiles: 1
+  default-temporal-BIAS:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval BIAS
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: preds/ml-25m-default-BIAS
+      hash: md5
+      md5: bb05bb7ce91a3ddc0e26990df98ae183.dir
+      size: 2030427
+      nfiles: 1
+    - path: recs/ml-25m-default-BIAS
+      hash: md5
+      md5: 85591b4b31f167cc58bed7fcea34e144.dir
+      size: 66329
+      nfiles: 1
+  default-temporal-LIFT:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval LIFT
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: recs/ml-25m-default-LIFT
+      hash: md5
+      md5: 3c5b00a6877c4bc3d9ad10bc7e32701c.dir
+      size: 340891
+      nfiles: 1
+  default-temporal-I-MF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval I-MF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: recs/ml-25m-default-I-MF
+      hash: md5
+      md5: 0986cc75bbceb32e44de6445cfaa38f2.dir
+      size: 818351
+      nfiles: 1
+  default-temporal-TorchEMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval TorchEMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchmf.py
+      hash: md5
+      md5: 8a64ae1c30b8fcb6cc2155d1ae13d9cf
+      size: 11005
+    outs:
+    - path: preds/ml-25m-default-TorchEMF
+      hash: md5
+      md5: 87d18e0dbd3e6c5fb8c77b445ce31be2.dir
+      size: 1684608
+      nfiles: 1
+    - path: recs/ml-25m-default-TorchEMF
+      hash: md5
+      md5: 1ba27eee5bdc306ddc26adbe2c8c1fe0.dir
+      size: 544924
+      nfiles: 1
+  default-temporal-UserIMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval UserIMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchimf.py
+      hash: md5
+      md5: a665718d3fc49459372d89c8c6926d95
+      size: 9546
+    outs:
+    - path: recs/ml-25m-default-UserIMF
+      hash: md5
+      md5: 9638c4199ce6aa0ee2b99b417f33f1ee.dir
+      size: 505276
+      nfiles: 1
+  default-temporal-UserLMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval UserLMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchlmf.py
+      hash: md5
+      md5: f19aa9879ed33f3b369916c62c652e4b
+      size: 10251
+    outs:
+    - path: recs/ml-25m-default-UserLMF
+      hash: md5
+      md5: 68663587f73ab7cbd31d84040f82a70e.dir
+      size: 515641
+      nfiles: 1
+  default-temporal-SampLMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval SampLMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchimfsamp.py
+      hash: md5
+      md5: b184cef7b9979a3e18ad04b2c79363bc
+      size: 14027
+    outs:
+    - path: recs/ml-25m-default-SampLMF
+      hash: md5
+      md5: 0d03a5b5c101aeef0866041bc99abb70.dir
+      size: 527118
+      nfiles: 1
+  default-temporal-BPR:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval BPR
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchimfsamp.py
+      hash: md5
+      md5: b184cef7b9979a3e18ad04b2c79363bc
+      size: 14027
+    outs:
+    - path: recs/ml-25m-default-BPR
+      hash: md5
+      md5: 9ad6305483657a5b5cae113a1d6ff077.dir
+      size: 516785
+      nfiles: 1
+  analysis:
+    cmd: jupytext -s --exec EvalOutputs.py
+    deps:
+    - path: EvalOutputs.py
+      hash: md5
+      md5: 1e0ba51c51378ad4c79eeb768ec57870
+      size: 5524
+    - path: runs/ml-25m-default-BIAS/eval-preds.parquet
+      hash: md5
+      md5: 391b8c03397502c23271d65a16f2f76a
+      size: 2030427
+    - path: runs/ml-25m-default-BIAS/eval-recs.parquet
+      hash: md5
+      md5: ff45fa2bcb2e96ac5b6ae510301cc0b7
+      size: 66329
+    - path: runs/ml-25m-default-BIAS/tuning-preds.parquet
+      hash: md5
+      md5: dff9a1ded92cdce3c37757ffcb7d44e7
+      size: 2190737
+    - path: runs/ml-25m-default-BIAS/tuning-recs.parquet
+      hash: md5
+      md5: bcafd5b50942724c524d89eba99ac6ea
+      size: 69597
+    - path: runs/ml-25m-default-BPR/eval-recs.parquet
+      hash: md5
+      md5: b1eb36cefba2a21245c14df8e7481c83
+      size: 516785
+    - path: runs/ml-25m-default-BPR/tuning-recs.parquet
+      hash: md5
+      md5: 66888b3ba38cbbc93990a8f3721d9a8e
+      size: 551907
+    - path: runs/ml-25m-default-E-MF/eval-preds.parquet
+      hash: md5
+      md5: df2973b1b826b90f3c6035ef4accbac8
+      size: 2033667
+    - path: runs/ml-25m-default-E-MF/eval-recs.parquet
+      hash: md5
+      md5: ec349e021357090baca4e215f98f7282
+      size: 765049
+    - path: runs/ml-25m-default-E-MF/tuning-preds.parquet
+      hash: md5
+      md5: 2e90571bcee8e77324c1701c73d4ace4
+      size: 2204159
+    - path: runs/ml-25m-default-E-MF/tuning-recs.parquet
+      hash: md5
+      md5: 7b99cd05e0526c81e8093791f36d3dd5
+      size: 818709
+    - path: runs/ml-25m-default-I-MF/eval-recs.parquet
+      hash: md5
+      md5: 61789df11f06bbc9a96406b3246efd30
+      size: 818831
+    - path: runs/ml-25m-default-I-MF/tuning-recs.parquet
+      hash: md5
+      md5: 81219e727e8b8e089e7ca1a5844f7a8d
+      size: 859574
+    - path: runs/ml-25m-default-LIFT/eval-recs.parquet
+      hash: md5
+      md5: 8711719607b86f4be882f2f8ae8e8977
+      size: 340891
+    - path: runs/ml-25m-default-LIFT/tuning-recs.parquet
+      hash: md5
+      md5: 8b9135f7a985e0a273c15cbc3c08587d
+      size: 366439
+    - path: runs/ml-25m-default-POP/eval-recs.parquet
+      hash: md5
+      md5: 9e35159c8879e96558eb02ef661b356b
+      size: 149066
+    - path: runs/ml-25m-default-POP/tuning-recs.parquet
+      hash: md5
+      md5: b817c416eb3492ae89e9b3832c252f7a
+      size: 155289
+    - path: runs/ml-25m-default-SampLMF/eval-recs.parquet
+      hash: md5
+      md5: 309bb48838119d0e93fa227e6132c5cf
+      size: 527118
+    - path: runs/ml-25m-default-SampLMF/tuning-recs.parquet
+      hash: md5
+      md5: 70faf0cbb85ce5f1ce3e205daf9bbf63
+      size: 553975
+    - path: runs/ml-25m-default-TagEMF/eval-preds.parquet
+      hash: md5
+      md5: 06b7851bf43c6a946e6ee066504301b5
+      size: 1684756
+    - path: runs/ml-25m-default-TagEMF/eval-recs.parquet
+      hash: md5
+      md5: f3d082f77f26b1fe7e819ca571df9e2b
+      size: 554060
+    - path: runs/ml-25m-default-TagEMF/tuning-preds.parquet
+      hash: md5
+      md5: 1df1b417913013cfa7cb3a60872bb60d
+      size: 1823069
+    - path: runs/ml-25m-default-TagEMF/tuning-recs.parquet
+      hash: md5
+      md5: 9509a7560cd2a6b814f127bd4c12dc4e
+      size: 590078
+    - path: runs/ml-25m-default-TorchEMF/eval-preds.parquet
+      hash: md5
+      md5: a108a037667fbd908d507bdcb5763b08
+      size: 1684716
+    - path: runs/ml-25m-default-TorchEMF/eval-recs.parquet
+      hash: md5
+      md5: fb9fce9535e287b491ebae204ca6d2a5
+      size: 544704
+    - path: runs/ml-25m-default-TorchEMF/tuning-preds.parquet
+      hash: md5
+      md5: b92ed7770d519246dc8a2584417a149c
+      size: 1822937
+    - path: runs/ml-25m-default-TorchEMF/tuning-recs.parquet
+      hash: md5
+      md5: 66118da76251c5b601a8968703cdfec6
+      size: 579686
+    - path: runs/ml-25m-default-UserIMF/eval-recs.parquet
+      hash: md5
+      md5: 6638504967b64dbd96a692f01c1488da
+      size: 505276
+    - path: runs/ml-25m-default-UserIMF/tuning-recs.parquet
+      hash: md5
+      md5: 0f372d5c187c5f8e552cf71f0706ba72
+      size: 540234
+    - path: runs/ml-25m-tuned-BIAS/eval-preds.parquet
+      hash: md5
+      md5: 84bfbd0e1bba2e087a98a782b129e979
+      size: 2038994
+    - path: runs/ml-25m-tuned-BIAS/eval-recs.parquet
+      hash: md5
+      md5: d60df287378d77f98762ae28f77edbc6
+      size: 704857
+    - path: runs/ml-25m-tuned-BIAS/tuning-preds.parquet
+      hash: md5
+      md5: 462b0f94c09b6a89829a05595e119332
+      size: 2209442
+    - path: runs/ml-25m-tuned-BIAS/tuning-recs.parquet
+      hash: md5
+      md5: 5610e1e2e4444e3afd9f64d7f2fe700a
+      size: 710525
+    - path: runs/ml-25m-tuned-BPR/eval-recs.parquet
+      hash: md5
+      md5: c4686bcacfa8d68f89a41230afcdd4b5
+      size: 534610
+    - path: runs/ml-25m-tuned-BPR/tuning-recs.parquet
+      hash: md5
+      md5: f7ab4aa7672d34fabec4dbbeeff0a40b
+      size: 569632
+    - path: runs/ml-25m-tuned-E-MF/eval-preds.parquet
+      hash: md5
+      md5: ef6ee7a5ac0c5e3548d0c30e3d39246e
+      size: 2033523
+    - path: runs/ml-25m-tuned-E-MF/eval-recs.parquet
+      hash: md5
+      md5: 0cd7910be7fc588f22e21ddd8fddd23b
+      size: 763374
+    - path: runs/ml-25m-tuned-E-MF/tuning-preds.parquet
+      hash: md5
+      md5: 9e0cf925c7c1436307c50d8180471709
+      size: 2204063
+    - path: runs/ml-25m-tuned-E-MF/tuning-recs.parquet
+      hash: md5
+      md5: dabca65eb70b3fdf3de087ddc2cfea2d
+      size: 820698
+    - path: runs/ml-25m-tuned-I-MF/eval-recs.parquet
+      hash: md5
+      md5: ed2c811027660aff4f2f49c59102c73d
+      size: 800697
+    - path: runs/ml-25m-tuned-I-MF/tuning-recs.parquet
+      hash: md5
+      md5: ee0fa97af061f8b5d7be2f676fee6e25
+      size: 841947
+    - path: runs/ml-25m-tuned-SampLMF/eval-recs.parquet
+      hash: md5
+      md5: 41145d26abb2131cf3dd9956ece747a2
+      size: 543860
+    - path: runs/ml-25m-tuned-SampLMF/tuning-recs.parquet
+      hash: md5
+      md5: 9d0af615e434e0b7c22dff078468201a
+      size: 579387
+    - path: runs/ml-25m-tuned-TagEMF/eval-preds.parquet
+      hash: md5
+      md5: e8d31f39f8e42eef5c6c92a159845f9b
+      size: 1684508
+    - path: runs/ml-25m-tuned-TagEMF/eval-recs.parquet
+      hash: md5
+      md5: e0e1a9c920470da6b8385ab89eac971e
+      size: 524583
+    - path: runs/ml-25m-tuned-TagEMF/tuning-preds.parquet
+      hash: md5
+      md5: 32cf7cd1e03518626dd3fbd4a6fc13b4
+      size: 1822817
+    - path: runs/ml-25m-tuned-TagEMF/tuning-recs.parquet
+      hash: md5
+      md5: d176f9a22ad5e622be4e95b21e4741f7
+      size: 561843
+    - path: runs/ml-25m-tuned-TorchEMF/eval-preds.parquet
+      hash: md5
+      md5: 1aab4d954aa434ffc82eb3a5ccd0b62a
+      size: 1684440
+    - path: runs/ml-25m-tuned-TorchEMF/eval-recs.parquet
+      hash: md5
+      md5: 301a41c563d6dd6962f3a26e084f32aa
+      size: 526098
+    - path: runs/ml-25m-tuned-TorchEMF/tuning-preds.parquet
+      hash: md5
+      md5: b190838320ecbf7dfac1d398be9b2457
+      size: 1822781
+    - path: runs/ml-25m-tuned-TorchEMF/tuning-recs.parquet
+      hash: md5
+      md5: 74692e38aa7735b256014bdfe1f7a676
+      size: 561544
+    - path: runs/ml-25m-tuned-UserIMF/eval-recs.parquet
+      hash: md5
+      md5: 89d5f3e5f61a0ee8501e5e3c11f3a31d
+      size: 515897
+    - path: runs/ml-25m-tuned-UserIMF/tuning-recs.parquet
+      hash: md5
+      md5: aa060578206e17e17c2f0fc8d958ef04
+      size: 551039
+    outs:
+    - path: EvalOutputs.ipynb
+      hash: md5
+      md5: 37911a0a4946434540ce783b7c9cb1b9
+      size: 162008
+  tuned-temporal-E-MF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/E-MF.json
+      E-MF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: tuning/E-MF.json
+      hash: md5
+      md5: 0ab39eeb3095d802f5eefc5d7e815b43
+      size: 246
+    outs:
+    - path: preds/ml-25m-tuned-E-MF
+      hash: md5
+      md5: 34d9036f9a1dc1202449e8275fa4d711.dir
+      size: 2029087
+      nfiles: 1
+    - path: recs/ml-25m-tuned-E-MF
+      hash: md5
+      md5: da80f4eae2968832143a63ff69e7c1c9.dir
+      size: 763597
+      nfiles: 1
+  tuned-temporal-BIAS:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/BIAS.json
+      BIAS
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: tuning/BIAS.json
+      hash: md5
+      md5: 7b3cf2c511a37fc18f235a00251fa81c
+      size: 150
+    outs:
+    - path: preds/ml-25m-tuned-BIAS
+      hash: md5
+      md5: 717d3e596591b744378353b7aa278f6a.dir
+      size: 2038994
+      nfiles: 1
+    - path: recs/ml-25m-tuned-BIAS
+      hash: md5
+      md5: a4c46dbef071a884d537920592a15788.dir
+      size: 704857
+      nfiles: 1
+  tuned-temporal-TorchEMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/TorchEMF.json
+      TorchEMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchmf.py
+      hash: md5
+      md5: 8a64ae1c30b8fcb6cc2155d1ae13d9cf
+      size: 11005
+    - path: tuning/TorchEMF.json
+      hash: md5
+      md5: f82aa2d78e5be332760ef8358158c718
+      size: 177
+    outs:
+    - path: preds/ml-25m-tuned-TorchEMF
+      hash: md5
+      md5: b5a8142f02f4b02757e150d276e43e35.dir
+      size: 1684440
+      nfiles: 1
+    - path: recs/ml-25m-tuned-TorchEMF
+      hash: md5
+      md5: 17a3e9621a7244f7e7c4051d40120749.dir
+      size: 526098
+      nfiles: 1
+  tuned-temporal-I-MF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/I-MF.json
+      I-MF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: tuning/I-MF.json
+      hash: md5
+      md5: 5824d6f37e45f85e2a21ee40de710979
+      size: 208
+    outs:
+    - path: recs/ml-25m-tuned-I-MF
+      hash: md5
+      md5: 2ca24dc34cf51519b888e6cd7b34ae2e.dir
+      size: 800697
+      nfiles: 1
+  tuned-temporal-UserIMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/UserIMF.json
+      UserIMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchimf.py
+      hash: md5
+      md5: a665718d3fc49459372d89c8c6926d95
+      size: 9546
+    - path: tuning/UserIMF.json
+      hash: md5
+      md5: a24b2687a86d717fedc8d638b52b5e45
+      size: 212
+    outs:
+    - path: recs/ml-25m-tuned-UserIMF
+      hash: md5
+      md5: 4eed904162aba57ddaeeb22b7942e469.dir
+      size: 515897
+      nfiles: 1
+  tuned-temporal-SampLMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/SampLMF.json
+      SampLMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchimfsamp.py
+      hash: md5
+      md5: b184cef7b9979a3e18ad04b2c79363bc
+      size: 14027
+    - path: tuning/SampLMF.json
+      hash: md5
+      md5: 123d3b42f8edecb81f445c9ddff128ed
+      size: 180
+    outs:
+    - path: recs/ml-25m-tuned-SampLMF
+      hash: md5
+      md5: 198e760775088e80cc5ad162053fb453.dir
+      size: 543860
+      nfiles: 1
+  tuned-temporal-BPR:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/BPR.json
+      BPR
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchimfsamp.py
+      hash: md5
+      md5: b184cef7b9979a3e18ad04b2c79363bc
+      size: 14027
+    - path: tuning/BPR.json
+      hash: md5
+      md5: 9da1c3c7b9fa8cee1acb413f9dd0a076
+      size: 181
+    outs:
+    - path: recs/ml-25m-tuned-BPR
+      hash: md5
+      md5: 4c23b2fa9250e379ef8850bbb8d1b1ed.dir
+      size: 534610
+      nfiles: 1
+  default-temporal-eval-BIAS:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval BIAS
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: runs/ml-25m-default-BIAS/eval-preds.parquet
+      hash: md5
+      md5: 391b8c03397502c23271d65a16f2f76a
+      size: 2030427
+    - path: runs/ml-25m-default-BIAS/eval-recs.parquet
+      hash: md5
+      md5: ff45fa2bcb2e96ac5b6ae510301cc0b7
+      size: 66329
+  default-temporal-eval-BPR:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval BPR
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchimfsamp.py
+      hash: md5
+      md5: b184cef7b9979a3e18ad04b2c79363bc
+      size: 14027
+    outs:
+    - path: runs/ml-25m-default-BPR/eval-recs.parquet
+      hash: md5
+      md5: b1eb36cefba2a21245c14df8e7481c83
+      size: 516785
+  default-temporal-eval-E-MF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval E-MF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: runs/ml-25m-default-E-MF/eval-preds.parquet
+      hash: md5
+      md5: df2973b1b826b90f3c6035ef4accbac8
+      size: 2033667
+    - path: runs/ml-25m-default-E-MF/eval-recs.parquet
+      hash: md5
+      md5: ec349e021357090baca4e215f98f7282
+      size: 765049
+  default-temporal-eval-I-MF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval I-MF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: runs/ml-25m-default-I-MF/eval-recs.parquet
+      hash: md5
+      md5: 61789df11f06bbc9a96406b3246efd30
+      size: 818831
+  default-temporal-eval-LIFT:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval LIFT
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: runs/ml-25m-default-LIFT/eval-recs.parquet
+      hash: md5
+      md5: 8711719607b86f4be882f2f8ae8e8977
+      size: 340891
+  default-temporal-eval-POP:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval POP
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: runs/ml-25m-default-POP/eval-recs.parquet
+      hash: md5
+      md5: 9e35159c8879e96558eb02ef661b356b
+      size: 149066
+  default-temporal-eval-SampLMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval SampLMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchimfsamp.py
+      hash: md5
+      md5: b184cef7b9979a3e18ad04b2c79363bc
+      size: 14027
+    outs:
+    - path: runs/ml-25m-default-SampLMF/eval-recs.parquet
+      hash: md5
+      md5: 309bb48838119d0e93fa227e6132c5cf
+      size: 527118
+  default-temporal-eval-TagEMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval --tags TagEMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchtag.py
+      hash: md5
+      md5: d81fb9680bb864acc8384c65111ad37a
+      size: 14545
+    outs:
+    - path: runs/ml-25m-default-TagEMF/eval-preds.parquet
+      hash: md5
+      md5: 06b7851bf43c6a946e6ee066504301b5
+      size: 1684756
+    - path: runs/ml-25m-default-TagEMF/eval-recs.parquet
+      hash: md5
+      md5: f3d082f77f26b1fe7e819ca571df9e2b
+      size: 554060
+  default-temporal-eval-TorchEMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval TorchEMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchmf.py
+      hash: md5
+      md5: 8a64ae1c30b8fcb6cc2155d1ae13d9cf
+      size: 11005
+    outs:
+    - path: runs/ml-25m-default-TorchEMF/eval-preds.parquet
+      hash: md5
+      md5: a108a037667fbd908d507bdcb5763b08
+      size: 1684716
+    - path: runs/ml-25m-default-TorchEMF/eval-recs.parquet
+      hash: md5
+      md5: fb9fce9535e287b491ebae204ca6d2a5
+      size: 544704
+  default-temporal-eval-UserIMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval UserIMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchimf.py
+      hash: md5
+      md5: a665718d3fc49459372d89c8c6926d95
+      size: 9546
+    outs:
+    - path: runs/ml-25m-default-UserIMF/eval-recs.parquet
+      hash: md5
+      md5: 6638504967b64dbd96a692f01c1488da
+      size: 505276
+  tuned-temporal-tune-BIAS:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --tuning --params tuning/BIAS.json
+      BIAS
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: tuning/BIAS.json
+      hash: md5
+      md5: 7b3cf2c511a37fc18f235a00251fa81c
+      size: 150
+    outs:
+    - path: runs/ml-25m-tuned-BIAS/tuning-preds.parquet
+      hash: md5
+      md5: 462b0f94c09b6a89829a05595e119332
+      size: 2209442
+    - path: runs/ml-25m-tuned-BIAS/tuning-recs.parquet
+      hash: md5
+      md5: 5610e1e2e4444e3afd9f64d7f2fe700a
+      size: 710525
+  tuned-temporal-tune-BPR:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --tuning --params tuning/BPR.json
+      BPR
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchimfsamp.py
+      hash: md5
+      md5: b184cef7b9979a3e18ad04b2c79363bc
+      size: 14027
+    - path: tuning/BPR.json
+      hash: md5
+      md5: 9da1c3c7b9fa8cee1acb413f9dd0a076
+      size: 181
+    outs:
+    - path: runs/ml-25m-tuned-BPR/tuning-recs.parquet
+      hash: md5
+      md5: f7ab4aa7672d34fabec4dbbeeff0a40b
+      size: 569632
+  tuned-temporal-tune-E-MF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --tuning --params tuning/E-MF.json
+      E-MF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: tuning/E-MF.json
+      hash: md5
+      md5: 0ab39eeb3095d802f5eefc5d7e815b43
+      size: 246
+    outs:
+    - path: runs/ml-25m-tuned-E-MF/tuning-preds.parquet
+      hash: md5
+      md5: 9e0cf925c7c1436307c50d8180471709
+      size: 2204063
+    - path: runs/ml-25m-tuned-E-MF/tuning-recs.parquet
+      hash: md5
+      md5: dabca65eb70b3fdf3de087ddc2cfea2d
+      size: 820698
+  tuned-temporal-tune-I-MF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --tuning --params tuning/I-MF.json
+      I-MF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: tuning/I-MF.json
+      hash: md5
+      md5: 5824d6f37e45f85e2a21ee40de710979
+      size: 208
+    outs:
+    - path: runs/ml-25m-tuned-I-MF/tuning-recs.parquet
+      hash: md5
+      md5: ee0fa97af061f8b5d7be2f676fee6e25
+      size: 841947
+  tuned-temporal-tune-SampLMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --tuning --params tuning/SampLMF.json
+      SampLMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchimfsamp.py
+      hash: md5
+      md5: b184cef7b9979a3e18ad04b2c79363bc
+      size: 14027
+    - path: tuning/SampLMF.json
+      hash: md5
+      md5: 123d3b42f8edecb81f445c9ddff128ed
+      size: 180
+    outs:
+    - path: runs/ml-25m-tuned-SampLMF/tuning-recs.parquet
+      hash: md5
+      md5: 9d0af615e434e0b7c22dff078468201a
+      size: 579387
+  tuned-temporal-tune-TagEMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --tuning --tags --params tuning/TagEMF.json
+      TagEMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchtag.py
+      hash: md5
+      md5: d81fb9680bb864acc8384c65111ad37a
+      size: 14545
+    - path: tuning/TagEMF.json
+      hash: md5
+      md5: 6faec4fab8a9bc50bc8e80e2d8a2ab95
+      size: 182
+    outs:
+    - path: runs/ml-25m-tuned-TagEMF/tuning-preds.parquet
+      hash: md5
+      md5: 32cf7cd1e03518626dd3fbd4a6fc13b4
+      size: 1822817
+    - path: runs/ml-25m-tuned-TagEMF/tuning-recs.parquet
+      hash: md5
+      md5: d176f9a22ad5e622be4e95b21e4741f7
+      size: 561843
+  tuned-temporal-tune-TorchEMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --tuning --params tuning/TorchEMF.json
+      TorchEMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchmf.py
+      hash: md5
+      md5: 8a64ae1c30b8fcb6cc2155d1ae13d9cf
+      size: 11005
+    - path: tuning/TorchEMF.json
+      hash: md5
+      md5: f82aa2d78e5be332760ef8358158c718
+      size: 177
+    outs:
+    - path: runs/ml-25m-tuned-TorchEMF/tuning-preds.parquet
+      hash: md5
+      md5: b190838320ecbf7dfac1d398be9b2457
+      size: 1822781
+    - path: runs/ml-25m-tuned-TorchEMF/tuning-recs.parquet
+      hash: md5
+      md5: 74692e38aa7735b256014bdfe1f7a676
+      size: 561544
+  tuned-temporal-tune-UserIMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --tuning --params tuning/UserIMF.json
+      UserIMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchimf.py
+      hash: md5
+      md5: a665718d3fc49459372d89c8c6926d95
+      size: 9546
+    - path: tuning/UserIMF.json
+      hash: md5
+      md5: a24b2687a86d717fedc8d638b52b5e45
+      size: 212
+    outs:
+    - path: runs/ml-25m-tuned-UserIMF/tuning-recs.parquet
+      hash: md5
+      md5: aa060578206e17e17c2f0fc8d958ef04
+      size: 551039
+  default-temporal-tune-BIAS:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --tuning BIAS
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: runs/ml-25m-default-BIAS/tuning-preds.parquet
+      hash: md5
+      md5: dff9a1ded92cdce3c37757ffcb7d44e7
+      size: 2190737
+    - path: runs/ml-25m-default-BIAS/tuning-recs.parquet
+      hash: md5
+      md5: bcafd5b50942724c524d89eba99ac6ea
+      size: 69597
+  default-temporal-tune-BPR:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --tuning BPR
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchimfsamp.py
+      hash: md5
+      md5: b184cef7b9979a3e18ad04b2c79363bc
+      size: 14027
+    outs:
+    - path: runs/ml-25m-default-BPR/tuning-recs.parquet
+      hash: md5
+      md5: 66888b3ba38cbbc93990a8f3721d9a8e
+      size: 551907
+  default-temporal-tune-E-MF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --tuning E-MF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: runs/ml-25m-default-E-MF/tuning-preds.parquet
+      hash: md5
+      md5: 2e90571bcee8e77324c1701c73d4ace4
+      size: 2204159
+    - path: runs/ml-25m-default-E-MF/tuning-recs.parquet
+      hash: md5
+      md5: 7b99cd05e0526c81e8093791f36d3dd5
+      size: 818709
+  default-temporal-tune-I-MF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --tuning I-MF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: runs/ml-25m-default-I-MF/tuning-recs.parquet
+      hash: md5
+      md5: 81219e727e8b8e089e7ca1a5844f7a8d
+      size: 859574
+  default-temporal-tune-LIFT:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --tuning LIFT
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: runs/ml-25m-default-LIFT/tuning-recs.parquet
+      hash: md5
+      md5: 8b9135f7a985e0a273c15cbc3c08587d
+      size: 366439
+  default-temporal-tune-POP:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --tuning POP
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    outs:
+    - path: runs/ml-25m-default-POP/tuning-recs.parquet
+      hash: md5
+      md5: b817c416eb3492ae89e9b3832c252f7a
+      size: 155289
+  default-temporal-tune-SampLMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --tuning SampLMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchimfsamp.py
+      hash: md5
+      md5: b184cef7b9979a3e18ad04b2c79363bc
+      size: 14027
+    outs:
+    - path: runs/ml-25m-default-SampLMF/tuning-recs.parquet
+      hash: md5
+      md5: 70faf0cbb85ce5f1ce3e205daf9bbf63
+      size: 553975
+  default-temporal-tune-TagEMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --tuning --tags TagEMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchtag.py
+      hash: md5
+      md5: d81fb9680bb864acc8384c65111ad37a
+      size: 14545
+    outs:
+    - path: runs/ml-25m-default-TagEMF/tuning-preds.parquet
+      hash: md5
+      md5: 1df1b417913013cfa7cb3a60872bb60d
+      size: 1823069
+    - path: runs/ml-25m-default-TagEMF/tuning-recs.parquet
+      hash: md5
+      md5: 9509a7560cd2a6b814f127bd4c12dc4e
+      size: 590078
+  default-temporal-tune-TorchEMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --tuning TorchEMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchmf.py
+      hash: md5
+      md5: 8a64ae1c30b8fcb6cc2155d1ae13d9cf
+      size: 11005
+    outs:
+    - path: runs/ml-25m-default-TorchEMF/tuning-preds.parquet
+      hash: md5
+      md5: b92ed7770d519246dc8a2584417a149c
+      size: 1822937
+    - path: runs/ml-25m-default-TorchEMF/tuning-recs.parquet
+      hash: md5
+      md5: 66118da76251c5b601a8968703cdfec6
+      size: 579686
+  default-temporal-tune-UserIMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --tuning UserIMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchimf.py
+      hash: md5
+      md5: a665718d3fc49459372d89c8c6926d95
+      size: 9546
+    outs:
+    - path: runs/ml-25m-default-UserIMF/tuning-recs.parquet
+      hash: md5
+      md5: 0f372d5c187c5f8e552cf71f0706ba72
+      size: 540234
+  tuned-temporal-eval-BIAS:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/BIAS.json
+      BIAS
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: tuning/BIAS.json
+      hash: md5
+      md5: 7b3cf2c511a37fc18f235a00251fa81c
+      size: 150
+    outs:
+    - path: runs/ml-25m-tuned-BIAS/eval-preds.parquet
+      hash: md5
+      md5: 84bfbd0e1bba2e087a98a782b129e979
+      size: 2038994
+    - path: runs/ml-25m-tuned-BIAS/eval-recs.parquet
+      hash: md5
+      md5: d60df287378d77f98762ae28f77edbc6
+      size: 704857
+  tuned-temporal-eval-BPR:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/BPR.json
+      BPR
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchimfsamp.py
+      hash: md5
+      md5: b184cef7b9979a3e18ad04b2c79363bc
+      size: 14027
+    - path: tuning/BPR.json
+      hash: md5
+      md5: 9da1c3c7b9fa8cee1acb413f9dd0a076
+      size: 181
+    outs:
+    - path: runs/ml-25m-tuned-BPR/eval-recs.parquet
+      hash: md5
+      md5: c4686bcacfa8d68f89a41230afcdd4b5
+      size: 534610
+  tuned-temporal-eval-E-MF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/E-MF.json
+      E-MF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: tuning/E-MF.json
+      hash: md5
+      md5: 0ab39eeb3095d802f5eefc5d7e815b43
+      size: 246
+    outs:
+    - path: runs/ml-25m-tuned-E-MF/eval-preds.parquet
+      hash: md5
+      md5: ef6ee7a5ac0c5e3548d0c30e3d39246e
+      size: 2033523
+    - path: runs/ml-25m-tuned-E-MF/eval-recs.parquet
+      hash: md5
+      md5: 0cd7910be7fc588f22e21ddd8fddd23b
+      size: 763374
+  tuned-temporal-eval-I-MF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/I-MF.json
+      I-MF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: tuning/I-MF.json
+      hash: md5
+      md5: 5824d6f37e45f85e2a21ee40de710979
+      size: 208
+    outs:
+    - path: runs/ml-25m-tuned-I-MF/eval-recs.parquet
+      hash: md5
+      md5: ed2c811027660aff4f2f49c59102c73d
+      size: 800697
+  tuned-temporal-eval-SampLMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/SampLMF.json
+      SampLMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchimfsamp.py
+      hash: md5
+      md5: b184cef7b9979a3e18ad04b2c79363bc
+      size: 14027
+    - path: tuning/SampLMF.json
+      hash: md5
+      md5: 123d3b42f8edecb81f445c9ddff128ed
+      size: 180
+    outs:
+    - path: runs/ml-25m-tuned-SampLMF/eval-recs.parquet
+      hash: md5
+      md5: 41145d26abb2131cf3dd9956ece747a2
+      size: 543860
+  tuned-temporal-eval-TagEMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --tags --params tuning/TagEMF.json
+      TagEMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchtag.py
+      hash: md5
+      md5: d81fb9680bb864acc8384c65111ad37a
+      size: 14545
+    - path: tuning/TagEMF.json
+      hash: md5
+      md5: 6faec4fab8a9bc50bc8e80e2d8a2ab95
+      size: 182
+    outs:
+    - path: runs/ml-25m-tuned-TagEMF/eval-preds.parquet
+      hash: md5
+      md5: e8d31f39f8e42eef5c6c92a159845f9b
+      size: 1684508
+    - path: runs/ml-25m-tuned-TagEMF/eval-recs.parquet
+      hash: md5
+      md5: e0e1a9c920470da6b8385ab89eac971e
+      size: 524583
+  tuned-temporal-eval-TorchEMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/TorchEMF.json
+      TorchEMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchmf.py
+      hash: md5
+      md5: 8a64ae1c30b8fcb6cc2155d1ae13d9cf
+      size: 11005
+    - path: tuning/TorchEMF.json
+      hash: md5
+      md5: f82aa2d78e5be332760ef8358158c718
+      size: 177
+    outs:
+    - path: runs/ml-25m-tuned-TorchEMF/eval-preds.parquet
+      hash: md5
+      md5: 1aab4d954aa434ffc82eb3a5ccd0b62a
+      size: 1684440
+    - path: runs/ml-25m-tuned-TorchEMF/eval-recs.parquet
+      hash: md5
+      md5: 301a41c563d6dd6962f3a26e084f32aa
+      size: 526098
+  tuned-temporal-eval-UserIMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/UserIMF.json
+      UserIMF
+    deps:
+    - path: data/ml-25m-split/
+      hash: md5
+      md5: 0917c2a3f892fbcf4087aa64aaaeea70.dir
+      size: 620658586
+      nfiles: 6
+    - path: dsci641/algorithms/torchimf.py
+      hash: md5
+      md5: a665718d3fc49459372d89c8c6926d95
+      size: 9546
+    - path: tuning/UserIMF.json
+      hash: md5
+      md5: a24b2687a86d717fedc8d638b52b5e45
+      size: 212
+    outs:
+    - path: runs/ml-25m-tuned-UserIMF/eval-recs.parquet
+      hash: md5
+      md5: 89d5f3e5f61a0ee8501e5e3c11f3a31d
+      size: 515897
+  report:
+    cmd: jupyter nbconvert --to html EvalOutputs.ipynb
+    deps:
+    - path: EvalOutputs.ipynb
+      hash: md5
+      md5: 37911a0a4946434540ce783b7c9cb1b9
+      size: 162008
+    outs:
+    - path: EvalOutputs.html
+      hash: md5
+      md5: c73989f052cb0f8bc04da58a42b0dce8
+      size: 450571

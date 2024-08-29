@@ -1,0 +1,334 @@
+stages:
+  analysis:
+    cmd: jupytext -s --exec EvalOutputs.py
+    deps:
+    - EvalOutputs.py
+    - runs/ml-25m-default-BIAS/eval-recs.parquet
+    - runs/ml-25m-default-BIAS/eval-preds.parquet
+    - runs/ml-25m-default-BPR/eval-recs.parquet
+    - runs/ml-25m-default-E-MF/eval-recs.parquet
+    - runs/ml-25m-default-E-MF/eval-preds.parquet
+    - runs/ml-25m-default-I-MF/eval-recs.parquet
+    - runs/ml-25m-default-LIFT/eval-recs.parquet
+    - runs/ml-25m-default-POP/eval-recs.parquet
+    - runs/ml-25m-default-SampLMF/eval-recs.parquet
+    - runs/ml-25m-default-TagEMF/eval-recs.parquet
+    - runs/ml-25m-default-TagEMF/eval-preds.parquet
+    - runs/ml-25m-default-TorchEMF/eval-recs.parquet
+    - runs/ml-25m-default-TorchEMF/eval-preds.parquet
+    - runs/ml-25m-default-UserIMF/eval-recs.parquet
+    - runs/ml-25m-default-BIAS/tuning-recs.parquet
+    - runs/ml-25m-default-BIAS/tuning-preds.parquet
+    - runs/ml-25m-default-BPR/tuning-recs.parquet
+    - runs/ml-25m-default-E-MF/tuning-recs.parquet
+    - runs/ml-25m-default-E-MF/tuning-preds.parquet
+    - runs/ml-25m-default-I-MF/tuning-recs.parquet
+    - runs/ml-25m-default-LIFT/tuning-recs.parquet
+    - runs/ml-25m-default-POP/tuning-recs.parquet
+    - runs/ml-25m-default-SampLMF/tuning-recs.parquet
+    - runs/ml-25m-default-TagEMF/tuning-recs.parquet
+    - runs/ml-25m-default-TagEMF/tuning-preds.parquet
+    - runs/ml-25m-default-TorchEMF/tuning-recs.parquet
+    - runs/ml-25m-default-TorchEMF/tuning-preds.parquet
+    - runs/ml-25m-default-UserIMF/tuning-recs.parquet
+    - runs/ml-25m-tuned-BIAS/eval-recs.parquet
+    - runs/ml-25m-tuned-BIAS/eval-preds.parquet
+    - runs/ml-25m-tuned-BPR/eval-recs.parquet
+    - runs/ml-25m-tuned-E-MF/eval-recs.parquet
+    - runs/ml-25m-tuned-E-MF/eval-preds.parquet
+    - runs/ml-25m-tuned-I-MF/eval-recs.parquet
+    - runs/ml-25m-tuned-SampLMF/eval-recs.parquet
+    - runs/ml-25m-tuned-TagEMF/eval-recs.parquet
+    - runs/ml-25m-tuned-TagEMF/eval-preds.parquet
+    - runs/ml-25m-tuned-TorchEMF/eval-recs.parquet
+    - runs/ml-25m-tuned-TorchEMF/eval-preds.parquet
+    - runs/ml-25m-tuned-UserIMF/eval-recs.parquet
+    - runs/ml-25m-tuned-BIAS/tuning-recs.parquet
+    - runs/ml-25m-tuned-BIAS/tuning-preds.parquet
+    - runs/ml-25m-tuned-BPR/tuning-recs.parquet
+    - runs/ml-25m-tuned-E-MF/tuning-recs.parquet
+    - runs/ml-25m-tuned-E-MF/tuning-preds.parquet
+    - runs/ml-25m-tuned-I-MF/tuning-recs.parquet
+    - runs/ml-25m-tuned-SampLMF/tuning-recs.parquet
+    - runs/ml-25m-tuned-TagEMF/tuning-recs.parquet
+    - runs/ml-25m-tuned-TagEMF/tuning-preds.parquet
+    - runs/ml-25m-tuned-TorchEMF/tuning-recs.parquet
+    - runs/ml-25m-tuned-TorchEMF/tuning-preds.parquet
+    - runs/ml-25m-tuned-UserIMF/tuning-recs.parquet
+    outs:
+    - EvalOutputs.ipynb:
+        cache: false
+  default-temporal-eval-BIAS:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval BIAS
+    deps:
+    - data/ml-25m-split/
+    outs:
+    - runs/ml-25m-default-BIAS/eval-recs.parquet
+    - runs/ml-25m-default-BIAS/eval-preds.parquet
+  default-temporal-eval-BPR:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval BPR
+    deps:
+    - data/ml-25m-split/
+    - dsci641/algorithms/torchimfsamp.py
+    outs:
+    - runs/ml-25m-default-BPR/eval-recs.parquet
+  default-temporal-eval-E-MF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval E-MF
+    deps:
+    - data/ml-25m-split/
+    outs:
+    - runs/ml-25m-default-E-MF/eval-recs.parquet
+    - runs/ml-25m-default-E-MF/eval-preds.parquet
+  default-temporal-eval-I-MF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval I-MF
+    deps:
+    - data/ml-25m-split/
+    outs:
+    - runs/ml-25m-default-I-MF/eval-recs.parquet
+  default-temporal-eval-LIFT:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval LIFT
+    deps:
+    - data/ml-25m-split/
+    outs:
+    - runs/ml-25m-default-LIFT/eval-recs.parquet
+  default-temporal-eval-POP:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval POP
+    deps:
+    - data/ml-25m-split/
+    outs:
+    - runs/ml-25m-default-POP/eval-recs.parquet
+  default-temporal-eval-SampLMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval SampLMF
+    deps:
+    - data/ml-25m-split/
+    - dsci641/algorithms/torchimfsamp.py
+    outs:
+    - runs/ml-25m-default-SampLMF/eval-recs.parquet
+  default-temporal-eval-TagEMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval --tags TagEMF
+    deps:
+    - data/ml-25m-split/
+    - dsci641/algorithms/torchtag.py
+    outs:
+    - runs/ml-25m-default-TagEMF/eval-recs.parquet
+    - runs/ml-25m-default-TagEMF/eval-preds.parquet
+  default-temporal-eval-TorchEMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval TorchEMF
+    deps:
+    - data/ml-25m-split/
+    - dsci641/algorithms/torchmf.py
+    outs:
+    - runs/ml-25m-default-TorchEMF/eval-recs.parquet
+    - runs/ml-25m-default-TorchEMF/eval-preds.parquet
+  default-temporal-eval-UserIMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --eval UserIMF
+    deps:
+    - data/ml-25m-split/
+    - dsci641/algorithms/torchimf.py
+    outs:
+    - runs/ml-25m-default-UserIMF/eval-recs.parquet
+  default-temporal-tune-BIAS:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --tuning BIAS
+    deps:
+    - data/ml-25m-split/
+    outs:
+    - runs/ml-25m-default-BIAS/tuning-recs.parquet
+    - runs/ml-25m-default-BIAS/tuning-preds.parquet
+  default-temporal-tune-BPR:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --tuning BPR
+    deps:
+    - data/ml-25m-split/
+    - dsci641/algorithms/torchimfsamp.py
+    outs:
+    - runs/ml-25m-default-BPR/tuning-recs.parquet
+  default-temporal-tune-E-MF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --tuning E-MF
+    deps:
+    - data/ml-25m-split/
+    outs:
+    - runs/ml-25m-default-E-MF/tuning-recs.parquet
+    - runs/ml-25m-default-E-MF/tuning-preds.parquet
+  default-temporal-tune-I-MF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --tuning I-MF
+    deps:
+    - data/ml-25m-split/
+    outs:
+    - runs/ml-25m-default-I-MF/tuning-recs.parquet
+  default-temporal-tune-LIFT:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --tuning LIFT
+    deps:
+    - data/ml-25m-split/
+    outs:
+    - runs/ml-25m-default-LIFT/tuning-recs.parquet
+  default-temporal-tune-POP:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --tuning POP
+    deps:
+    - data/ml-25m-split/
+    outs:
+    - runs/ml-25m-default-POP/tuning-recs.parquet
+  default-temporal-tune-SampLMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --tuning SampLMF
+    deps:
+    - data/ml-25m-split/
+    - dsci641/algorithms/torchimfsamp.py
+    outs:
+    - runs/ml-25m-default-SampLMF/tuning-recs.parquet
+  default-temporal-tune-TagEMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --tuning --tags TagEMF
+    deps:
+    - data/ml-25m-split/
+    - dsci641/algorithms/torchtag.py
+    outs:
+    - runs/ml-25m-default-TagEMF/tuning-recs.parquet
+    - runs/ml-25m-default-TagEMF/tuning-preds.parquet
+  default-temporal-tune-TorchEMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --tuning TorchEMF
+    deps:
+    - data/ml-25m-split/
+    - dsci641/algorithms/torchmf.py
+    outs:
+    - runs/ml-25m-default-TorchEMF/tuning-recs.parquet
+    - runs/ml-25m-default-TorchEMF/tuning-preds.parquet
+  default-temporal-tune-UserIMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-default --tuning UserIMF
+    deps:
+    - data/ml-25m-split/
+    - dsci641/algorithms/torchimf.py
+    outs:
+    - runs/ml-25m-default-UserIMF/tuning-recs.parquet
+  report:
+    cmd: jupyter nbconvert --to html EvalOutputs.ipynb
+    deps:
+    - EvalOutputs.ipynb
+    outs:
+    - EvalOutputs.html
+  tuned-temporal-eval-BIAS:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/BIAS.json BIAS
+    deps:
+    - data/ml-25m-split/
+    - tuning/BIAS.json
+    outs:
+    - runs/ml-25m-tuned-BIAS/eval-recs.parquet
+    - runs/ml-25m-tuned-BIAS/eval-preds.parquet
+  tuned-temporal-eval-BPR:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/BPR.json BPR
+    deps:
+    - data/ml-25m-split/
+    - dsci641/algorithms/torchimfsamp.py
+    - tuning/BPR.json
+    outs:
+    - runs/ml-25m-tuned-BPR/eval-recs.parquet
+  tuned-temporal-eval-E-MF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/E-MF.json E-MF
+    deps:
+    - data/ml-25m-split/
+    - tuning/E-MF.json
+    outs:
+    - runs/ml-25m-tuned-E-MF/eval-recs.parquet
+    - runs/ml-25m-tuned-E-MF/eval-preds.parquet
+  tuned-temporal-eval-I-MF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/I-MF.json I-MF
+    deps:
+    - data/ml-25m-split/
+    - tuning/I-MF.json
+    outs:
+    - runs/ml-25m-tuned-I-MF/eval-recs.parquet
+  tuned-temporal-eval-SampLMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/SampLMF.json SampLMF
+    deps:
+    - data/ml-25m-split/
+    - dsci641/algorithms/torchimfsamp.py
+    - tuning/SampLMF.json
+    outs:
+    - runs/ml-25m-tuned-SampLMF/eval-recs.parquet
+  tuned-temporal-eval-TagEMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --tags --params tuning/TagEMF.json TagEMF
+    deps:
+    - data/ml-25m-split/
+    - dsci641/algorithms/torchtag.py
+    - tuning/TagEMF.json
+    outs:
+    - runs/ml-25m-tuned-TagEMF/eval-recs.parquet
+    - runs/ml-25m-tuned-TagEMF/eval-preds.parquet
+  tuned-temporal-eval-TorchEMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/TorchEMF.json TorchEMF
+    deps:
+    - data/ml-25m-split/
+    - dsci641/algorithms/torchmf.py
+    - tuning/TorchEMF.json
+    outs:
+    - runs/ml-25m-tuned-TorchEMF/eval-recs.parquet
+    - runs/ml-25m-tuned-TorchEMF/eval-preds.parquet
+  tuned-temporal-eval-UserIMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --eval --params tuning/UserIMF.json UserIMF
+    deps:
+    - data/ml-25m-split/
+    - dsci641/algorithms/torchimf.py
+    - tuning/UserIMF.json
+    outs:
+    - runs/ml-25m-tuned-UserIMF/eval-recs.parquet
+  tuned-temporal-tune-BIAS:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --tuning --params tuning/BIAS.json BIAS
+    deps:
+    - data/ml-25m-split/
+    - tuning/BIAS.json
+    outs:
+    - runs/ml-25m-tuned-BIAS/tuning-recs.parquet
+    - runs/ml-25m-tuned-BIAS/tuning-preds.parquet
+  tuned-temporal-tune-BPR:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --tuning --params tuning/BPR.json BPR
+    deps:
+    - data/ml-25m-split/
+    - dsci641/algorithms/torchimfsamp.py
+    - tuning/BPR.json
+    outs:
+    - runs/ml-25m-tuned-BPR/tuning-recs.parquet
+  tuned-temporal-tune-E-MF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --tuning --params tuning/E-MF.json E-MF
+    deps:
+    - data/ml-25m-split/
+    - tuning/E-MF.json
+    outs:
+    - runs/ml-25m-tuned-E-MF/tuning-recs.parquet
+    - runs/ml-25m-tuned-E-MF/tuning-preds.parquet
+  tuned-temporal-tune-I-MF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --tuning --params tuning/I-MF.json I-MF
+    deps:
+    - data/ml-25m-split/
+    - tuning/I-MF.json
+    outs:
+    - runs/ml-25m-tuned-I-MF/tuning-recs.parquet
+  tuned-temporal-tune-SampLMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --tuning --params tuning/SampLMF.json SampLMF
+    deps:
+    - data/ml-25m-split/
+    - dsci641/algorithms/torchimfsamp.py
+    - tuning/SampLMF.json
+    outs:
+    - runs/ml-25m-tuned-SampLMF/tuning-recs.parquet
+  tuned-temporal-tune-TagEMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --tuning --tags --params tuning/TagEMF.json TagEMF
+    deps:
+    - data/ml-25m-split/
+    - dsci641/algorithms/torchtag.py
+    - tuning/TagEMF.json
+    outs:
+    - runs/ml-25m-tuned-TagEMF/tuning-recs.parquet
+    - runs/ml-25m-tuned-TagEMF/tuning-preds.parquet
+  tuned-temporal-tune-TorchEMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --tuning --params tuning/TorchEMF.json TorchEMF
+    deps:
+    - data/ml-25m-split/
+    - dsci641/algorithms/torchmf.py
+    - tuning/TorchEMF.json
+    outs:
+    - runs/ml-25m-tuned-TorchEMF/tuning-recs.parquet
+    - runs/ml-25m-tuned-TorchEMF/tuning-preds.parquet
+  tuned-temporal-tune-UserIMF:
+    cmd: python run-algo.py -d ml-25m -p ml-25m-tuned --tuning --params tuning/UserIMF.json UserIMF
+    deps:
+    - data/ml-25m-split/
+    - dsci641/algorithms/torchimf.py
+    - tuning/UserIMF.json
+    outs:
+    - runs/ml-25m-tuned-UserIMF/tuning-recs.parquet

@@ -1,0 +1,9 @@
+{
+    "[python]": {
+        "editor.formatOnSave": true
+    },
+    "[jsonnet]": {
+        "editor.formatOnSave": true
+    },
+    "python.analysis.typeCheckingMode": "basic"
+}
