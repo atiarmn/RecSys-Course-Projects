@@ -1,6 +1,6 @@
 # Recommender Systems Course Projects
 
-This repository contains the coursework for DSCI 641 - Recommender Systems - Winter 2024. The projects focus on building and evaluating various types of recommender systems, utilizing different datasets and methodologies.
+This repository contains projects I did for DSCI 641 - Recommender Systems - Winter 2024. The projects focus on building and evaluating various types of recommender systems, utilizing different datasets and methodologies.
 
 ## Table of Contents
 
@@ -9,7 +9,8 @@ This repository contains the coursework for DSCI 641 - Recommender Systems - Win
 3. [Homework 1 - Basic Recommender Systems](#homework-1---basic-recommender-systems)
 4. [Homework 2 - Advanced Recommender Systems](#homework-2---advanced-recommender-systems)
 5. [Homework 3 - Hybrid Recommender Systems](#homework-3---hybrid-recommender-systems)
-6. [Datasets](#datasets)
+6. [Final - Comprehensive Recommender System Project](#final---comprehensive-recommender-system-project)
+7. [Datasets](#datasets)
 
 ## Overview
 
@@ -59,7 +60,22 @@ The repository is structured as follows:
 - Evaluate the model using different loss functions (e.g., MSE, BPR).
 - Perform hyperparameter tuning to optimize model performance.
 
+## Final - Comprehensive Recommender System Project
+
+**Objective**: The final project involves building, training, and evaluating a comprehensive recommender system using various algorithms and techniques. This project integrates different aspects of recommendation methodologies, including collaborative filtering, content-based filtering, and hybrid models.
+
+**Key Components**:
+- **Model Training**: The `Train.ipynb` notebook focuses on the training process of the recommender models, utilizing various datasets and model architectures.
+- **Evaluation**: The `Eval.ipynb` notebook is dedicated to assessing the performance of the trained models using metrics such as RMSE and nDCG.
+- **Algorithm Definitions**: The `algo_defs.py` script contains the definitions for the algorithms employed in the project, allowing for flexibility in choosing and customizing recommendation strategies.
+- **Data Splitting**: The `split-data.py` script handles the splitting of datasets into training, validation, and test sets, ensuring robust evaluation of the models.
+- **Recommendation Generation**: The `train-recommend.py` script manages the end-to-end process of training the model and generating recommendations.
+- **Tag-based Filtering**: The `recipetag.py` script is specialized in handling tag-based recommendations, leveraging metadata for improved content-based filtering.
+- **Configuration**: The `params.yaml` file includes configuration settings for the project, such as hyperparameters and paths to data files.
+- **Dependencies**: The `requirements.txt` file lists all Python dependencies required to run the project, ensuring compatibility and ease of setup.
+
+
 ## Datasets
-    - MovieLens 25M from [here](https://grouplens.org/datasets/movielens/25m/).
-    - Amazon ratings data from [here](https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/).
-    - UCSD Book Graph data from [here](https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/home).
+- MovieLens 25M from [here](https://grouplens.org/datasets/movielens/25m/).
+- Amazon ratings data from [here](https://cseweb.ucsd.edu/~jmcauley/datasets/amazon_v2/).
+- UCSD Book Graph data from [here](https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/home).
